@@ -8,7 +8,7 @@ function PokemonList(props) {
             { props.pokes.map(poke => {
                 return <PokemonItem
                     poke={poke}
-                    key={poke.id}
+                    togglePoke={props.togglePoke}
                 />
             })
             }
@@ -17,8 +17,7 @@ function PokemonList(props) {
 }
 
 PokemonList.propTypes = {
-    pokes: PropTypes.arrayOf(PropTypes.object).isRequired,
-    onToggle: PropTypes.func.isRequired
+    pokes: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default PokemonList

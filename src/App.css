@@ -4,6 +4,7 @@ ul {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 li {
@@ -24,9 +25,26 @@ span {
     align-items: center;
 }
 
-h1, h2, h3 {
+h1 {
+    background-color: rgba(186,173,193,0.7);
+    width: 100%;
+    padding: 30px 0;
+    margin: 0;
+    height: 90px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    font-size: 45px;
+}
+
+h1, h3 {
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    display: flex;
+    justify-content: left;
 }
 
 body {
@@ -37,9 +55,9 @@ body {
 }
 
 .wrapper {
-    padding-top: 5rem;
+    padding-top: 0;
     margin: 0 auto;
-    width: 900px;
+    width: 100%;
 }
 
 .rm {
