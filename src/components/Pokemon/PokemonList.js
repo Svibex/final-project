@@ -5,7 +5,7 @@ import PokemonItem from "./PokemonItem";
 function PokemonList(props) {
     return (
         <ul>
-            { props.pokes.map(poke => {
+            {props.pokes.map(poke => {
                 return <PokemonItem
                     poke={poke}
                     togglePoke={props.togglePoke}

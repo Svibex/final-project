@@ -40,15 +40,18 @@ h1 {
 h1, h3 {
     display: flex;
     justify-content: center;
+    margin: 0;
 }
 
 h2 {
     display: flex;
     justify-content: left;
+    margin: 0;
 }
 
 body {
     background-image: url("light.jpg");
+    background-attachment: fixed;
     background-color: #e0deee;
     background-size: 100%;
     background-position: inherit;
@@ -67,4 +70,14 @@ body {
     border: none;
     height: 25px;
     width: 70px;
+    cursor: pointer;
+}
+
+.rm:hover {
+    background-color: #e0deee;
+}
+
+.imgPoke {
+    width: 150px;
+    height: 150px;
 }

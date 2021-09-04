@@ -9,7 +9,7 @@ function PokemonItem({ poke, togglePoke }) {
         <span>
             <h2>{poke.id}</h2>
             <h3>{poke.name}</h3>
-            <img src={require(`../imagePokemons/${poke.id}.png`).default} className="card-img-top img-fluid" alt="..."/>
+            <img src={require(`../imagePokemons/${poke.id}.png`).default} className="imgPoke" alt="..."/>
             {
                 poke.catch ? <h3>Data</h3> : <button
                     className='rm'
