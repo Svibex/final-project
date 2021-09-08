@@ -22,7 +22,8 @@
     },
     {
       "name": "charizard",
-      "id": 6
+      "id": 6,
+      "caught": true
     },
     {
       "name": "squirtle",
