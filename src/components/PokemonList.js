@@ -22,8 +22,9 @@ function PokemonList() {
     }, [fetching]);
 
     const scrollHandler = (e) => {
+        const POKEMON_VALUE = 720
         if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 100
-            && pokes.length < 721) {
+            && pokes.length <= POKEMON_VALUE) {
             setFetching(true)
         }
     };
@@ -36,7 +37,8 @@ function PokemonList() {
     }, [])
 
     function togglePoke(id, name) {
-        let pokemon = {name, id, caught: true}
+        const date = new Date().toUTCString();
+        let pokemon = {name, id, caught: true, date}
         const requestOptions = {
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
@@ -61,7 +63,8 @@ function PokemonList() {
             {pokes.map(poke => {
                 return <PokemonItem
                     poke={poke}
-                    togglePoke={togglePoke}/>
+                    togglePoke={togglePoke}
+                key={poke.id}/>
             })
             }
         </ul>

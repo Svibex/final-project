@@ -17,18 +17,25 @@ function PokemonItem({poke, togglePoke}) {
             <li>
         <span>
             <h2>{firstLetterToUpperCase(poke.name)}</h2>
-                <Link to="/card">
+                <Link to={{
+                    pathname: "/card",
+                    state: {
+                        id: poke.id,
+                        name: poke.name,
+                        date: poke.date
+                    }
+                }}>
                     <img src={require(`../img/pokemons/${poke.id}.png`).default} className="imgPoke" alt="..."/>
                 </Link>
             {
                 poke.caught ?
                     <button
-                        className='rmD'
+                        className='linkDis'
                         disabled>Gotcha!
                     </button> :
                     <button
-                        className='rm'
-                        onClick={() => togglePoke(poke.id, poke.name, poke.date)}>Catch!
+                        className='link'
+                        onClick={() => togglePoke(poke.id, poke.name)}>Catch!
                     </button>
             }
         </span>

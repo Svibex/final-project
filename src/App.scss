@@ -1,57 +1,72 @@
-ul {
+$backgroundTitle: rgba(#b3b3b3, 0.7%);
+$backgroundLi: rgba(#ffffff, 0.7%);
+$button: #353535;
+$buttonAct: #010101;
+$buttonDis: #ffffff;
+$buttonFont: #b3b3b3;
+
+
+@mixin dFlexCenter {
   display: flex;
   justify-content: center;
+}
+
+ul {
+  @include dFlexCenter;
   list-style: none;
   margin: 0 150px;
   padding: 140px 10px 10px 10px;
   flex-wrap: wrap;
-  align-items: center; }
+  align-items: center;
+}
 
 li {
-  display: flex;
-  justify-content: center;
+  @include dFlexCenter;
   flex-wrap: wrap;
   padding: 5px;
   align-content: center;
-  border: 1px solid #010101;
+  border: 1px solid $buttonAct;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: $backgroundLi;
   margin: 10px;
-  width: 200px; }
+  width: 200px;
+}
 
 span {
-  display: flex;
-  justify-content: center;
+  @include dFlexCenter;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+}
 
 h1 {
-  display: flex;
-  justify-content: center;
-  background-color: rgba(179, 179, 179, 0.7);
+  @include dFlexCenter;
+  background-color: $backgroundTitle;
   width: 100%;
   margin: 0;
   height: 70px;
   align-items: center;
   font-size: 30px;
-  position: fixed; }
+  position: fixed;
+}
 
 h1, h3 {
-  display: flex;
-  justify-content: center;
-  margin: 0; }
+  @include dFlexCenter;
+  margin: 0;
+}
 
 h2 {
   display: flex;
   justify-content: left;
-  margin: 0; }
+  margin: 0;
+}
 
 body {
   background-image: url("img/background.jpg");
   background-attachment: fixed;
-  background-color: #353535;
+  background-color: $button;
   background-size: 100%;
-  background-position: inherit; }
+  background-position: inherit;
+}
 
 .wrapper {
   display: flex;
@@ -59,62 +74,68 @@ body {
   align-items: center;
   padding-top: 0;
   margin: 0 auto;
-  width: 100%; }
+  width: 100%;
+}
 
 .header {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+}
 
 .navigation {
-  display: flex;
-  justify-content: center;
-  background-color: rgba(179, 179, 179, 0.7);
+  @include dFlexCenter;
+  background-color: $backgroundTitle;
   height: 60px;
   position: fixed;
   top: 70px;
-  width: 100%; }
+  width: 100%;
+}
 
 .link {
-  background-color: #353535;
+  background-color: $button;
   border-radius: 5px;
-  color: #b3b3b3;
+  color: $buttonFont;
   border: none;
   height: 35px;
   width: 100px;
   cursor: pointer;
-  margin: 5px 20px; }
+  margin: 5px 20px;
+}
 
 .linkDis {
-  background-color: #ffffff;
+  background-color: $buttonDis;
   border-radius: 5px;
-  color: #353535;
+  color: $button;
   border: none;
   height: 35px;
   width: 100px;
-  margin: 5px 20px; }
+  margin: 5px 20px;
+}
 
 .link:hover {
-  background-color: #010101; }
+  background-color: $buttonAct;
+}
 
 .imgPoke {
   width: 125px;
-  height: 125px; }
+  height: 125px;
+}
 
 .imgCard {
   width: 250px;
-  height: 250px; }
+  height: 250px;
+}
 
 .pokemon {
   margin-top: 200px;
-  background-color: rgba(179, 179, 179, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+  background-color: $backgroundTitle;
+  @include dFlexCenter;
+  align-items: center;
+}
 
 .caughtTitle {
   margin-top: 200px;
-  color: #b3b3b3;
-  font-size: 20px; }
-
-/*# sourceMappingURL=App.css.map */
+  color: $buttonFont;
+  font-size: 20px;
+}

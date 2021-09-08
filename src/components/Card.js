@@ -1,21 +1,50 @@
-import React, {useEffect, useState} from "react"
+import React, {useEffect, useState} from 'react'
 import '../App.css'
+import PropTypes from "prop-types";
 
-function Card() {
+const Card = (props) => {
 
+    let id = props.location.state.id;
+    let name = props.location.state.name;
+
+    const [poke, setPoke] = useState([]);
+
+    useEffect(() => {
+        fetch(`http://localhost:8080/pokemons/${id}`)
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                setPoke(data)
+            })
+    }, [id]);
+
+    function firstLetterToUpperCase(str) {
+        return str
+            .split(" ")
+            .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+            .join(" ");
+    }
+
+    console.log(name)
     return (
         <div className='card'>
             <div className='pokemon'>
                 <il>
-                    <li>ID</li>
-                    <li>Pokemon Name</li>
-                    <li>Дата поимки</li>
+                    <li>#{poke.id}</li>
+                    <li>{firstLetterToUpperCase(name)}</li>
+                    <li>{poke.date ? poke.date : 'Pokemon is not caught'}</li>
                 </il>
-                <h3>Здесь будет место для вашей картинки! :-)</h3> {/*потом удалить эту строку*/}
-            {/*<img src={require(`../img/pokemons/${poke.id}.png`).default} className="imgPoke" alt="..."/>*/}
+                <img src={require(`../img/pokemons/${id}.png`).default} className="imgCard" alt="..."/>
             </div>
         </div>
     )
+}
+
+Card.propTypes = {
+    poke: PropTypes.object.isRequired,
+    name: PropTypes.object.isRequired,
+    id: PropTypes.object.isRequired,
 }
 
 export default Card

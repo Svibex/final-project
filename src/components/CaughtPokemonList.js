@@ -14,7 +14,6 @@ function CaughtPokemonList() {
                     return res.json();
                 })
                 .then(data => {
-                    console.log(data)
                     setPokes([...pokes, ...data])
                     setCurrentPage(prevState => prevState + 1)
                 })
@@ -36,17 +35,20 @@ function CaughtPokemonList() {
         }
     }
 
-
-    return (
-        <ul>
-            {pokes.map(poke => {
-                return <PokemonItem
-                    poke={poke}
-                />
-            })
-            }
-        </ul>
-    )
+    if (pokes.filter(e => e.caught === true).length === 0) {
+        return (<h3 className='caughtTitle'>YOU DON'T HAVE ANY POKEMON CAUGHT</h3>)
+    } else {
+        return (
+            <ul>
+                {pokes.map(poke => {
+                    return <PokemonItem
+                        poke={poke}
+                    />
+                })
+                }
+            </ul>
+        )
+    }
 }
 
 export default CaughtPokemonList

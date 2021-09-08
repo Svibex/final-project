@@ -14,13 +14,13 @@ function App() {
                     className='navigation'>
                     <Link to="/">
                         <button
-                            className='rm'>
+                            className='link'>
                             All Pokemon
                         </button>
                     </Link>
                     <Link to="/caught">
                         <button
-                            className='rm'>
+                            className='link'>
                             Caught Pokemon
                         </button>
                     </Link>
@@ -29,7 +29,7 @@ function App() {
             <Switch>
                 <Route exact path="/" component={PokemonList}/>
                 <Route exact path="/caught" component={CaughtPokemonList}/>
-                <Route exact path="/card" component={Card}/> />
+                <Route exact path="/card" component={Card}/>
             </Switch>
         </div>
     );
